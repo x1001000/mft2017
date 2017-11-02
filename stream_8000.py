@@ -13,7 +13,7 @@ PAGE="""
 </head>
 <body>
 <img src="stream.mjpg" width="100%"/>
-<marquee behavior="alternate" scrollamount="30"><h1><font color="blue">@1001000x4</font></h1></marquee>
+<marquee behavior="alternate" scrollamount="10"><font size = "7" color="orange" face = "arial,helvetica">@1001000x4</font></marquee>
 </body>
 </html>
 """
@@ -78,7 +78,7 @@ class StreamingServer(socketserver.ThreadingMixIn, server.HTTPServer):
     allow_reuse_address = True
     daemon_threads = True
 
-with picamera.PiCamera(resolution='960x320', framerate=30) as camera:
+with picamera.PiCamera(resolution='960x540', framerate=30) as camera:
     output = StreamingOutput()
     camera.hflip = True
     camera.vflip = True
